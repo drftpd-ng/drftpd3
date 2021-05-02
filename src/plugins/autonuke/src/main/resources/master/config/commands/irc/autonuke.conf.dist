@@ -1,10 +1,11 @@
 autonukes {
 plugin org.drftpd.autonuke.master
 class AutoNukeCommands
-method doSITE_AUTONUKES
+method doAUTONUKES
 perms =siteop
 help Show AutoNuke queue.
-help.specific ${command} [section]
+help.specific Show AutoNuke queue.
+help.specific ${command} <section>
 input all
 output source
 }
@@ -12,10 +13,11 @@ output source
 autonukescan {
 plugin org.drftpd.autonuke.master
 class AutoNukeCommands
-method doSITE_AUTONUKESCAN
+method doAUTONUKESCAN
 perms =siteop
 help Manual AutoNuke scan.
-help.specific ${command} [path]
+help.specific Manual AutoNuke scan.
+help.specific ${command} <path>
 input all
 output source
 }
@@ -23,10 +25,11 @@ output source
 delqueue {
 plugin org.drftpd.autonuke.master
 class AutoNukeCommands
-method doSITE_DELQUEUE
+method doDELQUEUE
 perms =siteop
 help Delete one/all item(s) from AutoNuke queue.
-help.specific ${command} [path]
+help.specific Delete one/all item(s) from AutoNuke queue.
+help.specific ${command} <path>
 input all
 output source
 }

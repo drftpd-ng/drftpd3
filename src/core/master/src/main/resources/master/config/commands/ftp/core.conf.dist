@@ -276,37 +276,41 @@ perms *
 SITE ADDGROUP {
 plugin org.drftpd.master.commands.usermanagement
 class GroupManagementHandler
-method doSITE_ADDGROUP
+method doADDGROUP
 perms =siteop
 help Add a new group.
+help.specific Add a new group.
 help.specific ${command} <group>
 }
 
 SITE ADDIP {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_ADDIP
+method doADDIP
 perms =gadmin =siteop
 help Add a new mask to a user.
+help.specific Add a new mask to a user.
 help.specific ${command} <username> <ident@ip>
 }
 
 SITE ADDNOTE {
 plugin org.drftpd.master.commands.usermanagement.notes
 class Notes
-method doSITE_ADDNOTE
+method doADDNOTE
 perms =siteop
 help Add's Note for user.
+help.specific Add's Note for user.
 help.specific ${command} <username> <note>
 }
 
 SITE ADDSLAVE {
 plugin org.drftpd.master.commands.slavemanagement
 class SlaveManagement
-method doSITE_ADDSLAVE
+method doADDSLAVE
 perms =siteop
 help Add a slave to the site.
-help.specific ${command} <SLAVENAME>
+help.specific Add a slave to the site.
+help.specific ${command} <slavename>
 help.specific Add the specified slave to the site.
 help.specific Note: Be sure to use SITE SLAVE <SLAVENAME> ADDMASK <ident@host>
 help.specific to allow the slave to connect.
@@ -315,9 +319,10 @@ help.specific to allow the slave to connect.
 SITE ADDUSER {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_ADDUSER
+method doADDUSER
 perms =gadmin =siteop
 help Add a new user.
+help.specific Add a new user.
 help.specific ${command} <user> <password> [<ident@ip#1> ...]
 }
 
@@ -327,6 +332,7 @@ class Textoutput
 method doTEXT_OUTPUT
 perms *
 help Displays the site affils.
+help.specific Displays the site affils.
 help.specific ${command}
 file affils.txt
 }
@@ -334,54 +340,60 @@ file affils.txt
 SITE ALDN {
 plugin org.drftpd.master.commands.transferstatistics
 class TransferStatistics
-method doSITE_ALDN
+method doALDN
 perms *
 help Lists the top downloaders of all time.
+help.specific Lists the top downloaders of all time.
 help.specific ${command}
 }
 
 SITE ALUP {
 plugin org.drftpd.master.commands.transferstatistics
 class TransferStatistics
-method doSITE_ALUP
+method doALUP
 perms *
 help Lists the top uploaders of all time.
+help.specific Lists the top uploaders of all time.
 help.specific ${command}
 }
 
 SITE APPROVE {
 plugin org.drftpd.master.commands.approve
 class ApproveCommands
-method doSITE_APPROVE
+method doAPPROVE
 perms =siteop
 help Approve release even though rules say it should get nuked.
+help.specific Approve release even though rules say it should get nuked.
 help.specific ${command} [path]
 }
 
 SITE BAN {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_BAN
+method doBAN
 perms =ban =siteop
 help Ban a user from logging onto the site for a specified amount of time.
+help.specific Ban a user from logging onto the site for a specified amount of time.
 help.specific ${command} <user> <minutes> [reason]
 }
 
 SITE BANALL {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_BANALL
+method doBANALL
 perms =ban =siteop
 help Ban all users from logging onto the site for a specified amount of time.
+help.specific Ban all users from logging onto the site for a specified amount of time.
 help.specific ${command} <minutes> [reason]
 }
 
 SITE BANS {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_BANS
+method doBANS
 perms =ban =siteop
 help List the current users banned on the site.
+help.specific List the current users banned on the site.
 help.specific ${command}
 }
 
@@ -391,6 +403,7 @@ class Textoutput
 method doTEXT_OUTPUT
 perms *
 help Displays the site bnc details.
+help.specific Displays the site bnc details.
 help.specific ${command}
 file bnc.txt
 }
@@ -401,6 +414,7 @@ class UserManagementHandler
 method doBW
 perms *
 help Show total bandwidth use.
+help.specific Show total bandwidth use.
 help.specific ${command}
 }
 
@@ -408,9 +422,10 @@ help.specific ${command}
 SITE CHANGE {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_CHANGEUSER
+method doCHANGEUSER
 perms =gadmin =siteop
 help Change parameters for a user.
+help.specific Change parameters for a user.
 help.specific ${command} <username> <field> <value>
 help.specific Valid fields: group, created, ratio, idle_time, credits, tagline
 help.specific num_logins # [opt perIP], comment, wkly_allotment, max_sim #dn #up
@@ -419,9 +434,10 @@ help.specific num_logins # [opt perIP], comment, wkly_allotment, max_sim #dn #up
 SITE CHANGEGROUP {
 plugin org.drftpd.master.commands.usermanagement
 class GroupManagementHandler
-method doSITE_CHANGEGROUP
+method doCHANGEGROUP
 perms =siteop
 help Change parameters for a group.
+help.specific Change parameters for a group.
 help.specific ${command} <groupname> <field> <value>
 help.specific Valid fields: created, slots, leechslots
 }
@@ -429,18 +445,20 @@ help.specific Valid fields: created, slots, leechslots
 SITE CHANGEGROUPADMIN {
 plugin org.drftpd.master.commands.usermanagement
 class GroupManagementHandler
-method doSITE_CHANGEGROUPADMIN
+method doCHANGEGROUPADMIN
 perms =siteop
 help Add/Remove users as group admin from a group.
+help.specific Add/Remove users as group admin from a group.
 help.specific ${command} <group> <user> [<user> ...]
 }
 
 SITE CHANGEUSER {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_CHANGEUSER
+method doCHANGEUSER
 perms =gadmin =siteop
 help Change parameters for a user.
+help.specific Change parameters for a user.
 help.specific ${command} <username> <field> <value>
 help.specific Valid fields: group, created, ratio, idle_time, credits, tagline
 help.specific num_logins # [opt perIP], comment, wkly_allotment, max_sim #dn #up
@@ -449,27 +467,30 @@ help.specific num_logins # [opt perIP], comment, wkly_allotment, max_sim #dn #up
 SITE CHGRP {
 plugin org.drftpd.master.commands.usermanagement
 class GroupManagementHandler
-method doSITE_CHGRP
+method doCHGRP
 perms =siteop
 help Change secondary groups for a user.
+help.specific Change secondary groups for a user.
 help.specific ${command} <user> <group> [<group> ...]
 }
 
 SITE CHOWN {
 plugin org.drftpd.master.commands.dir
 class Dir
-method doSITE_CHOWN
+method doCHOWN
 perms =siteop
 help Changes ownership of a file/directory.
+help.specific Changes ownership of a file/directory.
 help.specific ${command} [-r] <user>[:<group>] <file>
 }
 
 SITE CHPASS {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_CHPASS
+method doCHPASS
 perms =gadmin =siteop
 help Change password for a user.
+help.specific Change password for a user.
 help.specific ${command} <user> <password>
 }
 
@@ -479,6 +500,7 @@ class UserManagementHandler
 method doCredits
 perms *
 help Show available credits.
+help.specific Show available credits.
 help.specific ${command}
 }
 
@@ -488,88 +510,97 @@ class TrialManagerCommands
 method doCUT
 perms *
 help Lists all cut users in trial period.
+help.specific Lists all cut users in trial period.
 help.specific ${command}
 }
 
 SITE DAYDN {
 plugin org.drftpd.master.commands.transferstatistics
 class TransferStatistics
-method doSITE_DAYDN
+method doDAYDN
 perms *
 help Lists the top downloaders for the day.
+help.specific Lists the top downloaders for the day.
 help.specific ${command}
 }
 
 SITE DAYUP {
 plugin org.drftpd.master.commands.transferstatistics
 class TransferStatistics
-method doSITE_DAYUP
+method doDAYUP
 perms *
 help Lists the top uploaders for the day.
+help.specific Lists the top uploaders for the day.
 help.specific ${command}
 }
 
 SITE DEBUG {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_DEBUG
+method doDEBUG
 perms *
 help Allows you to see stacktraces on command errors.
+help.specific Allows you to see stacktraces on command errors.
 help.specific ${command}
 }
 
 SITE DELIP {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_DELIP
+method doDELIP
 perms =gadmin =siteop
 help Remove a mask from a user.
+help.specific Remove a mask from a user.
 help.specific ${command} <user> <ident@ip> ...
 }
 
 SITE DELGROUP {
 plugin org.drftpd.master.commands.usermanagement
 class GroupManagementHandler
-method doSITE_DELGROUP
+method doDELGROUP
 perms =gadmin =siteop
 help Delete a group.
+help.specific Delete a group.
 help.specific ${command} <group>
 }
 
 SITE DELNOTE {
 plugin org.drftpd.master.commands.usermanagement.notes
 class Notes
-method doSITE_DELNOTE
+method doDELNOTE
 perms =siteop
 help Removes note for user.
-help.specific ${command} <username> <noteID>
+help.specific Removes note for user.
+help.specific ${command} <username> <noteid>
 }
 
 SITE DELPURGE {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_DELPURGE
+method doDELPURGE
 perms =gadmin =siteop
 help Permanently remove a user from the site.
-help.specific ${command} <username>
+help.specific Permanently remove a user from the site.
+help.specific ${command} <user>
 }
 
 SITE DELSLAVE {
 plugin org.drftpd.master.commands.slavemanagement
 class SlaveManagement
-method doSITE_DELSLAVE
+method doDELSLAVE
 perms =siteop
 help Remove a slave from the site.
-help.specific ${command} <SLAVENAME>
-help.specific Remove the specified slave from the site.
+help.specific Remove a slave from the site.
+help.specific ${command} <slave>
 }
 
 SITE DELUSER {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_DELUSER
+method doDELUSER
 perms =gadmin =siteop
 help Delete a user.
+help.specific Delete a user.
 help.specific ${command} <user> [reason]
 }
 
@@ -579,42 +610,47 @@ class SlaveManagement
 method doDiskfree
 perms *
 help Displays current free space.
+help.specific Displays current free space.
 help.specific ${command}
 }
 
 SITE FAIRNESS {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_FAIRNESS
+method doFAIRNESS
 perms =siteop
 help Show ratio for all users or a specific user/group if given as input
+help.specific Show ratio for all users or a specific user/group if given as input
 help.specific ${command} [user / =group]
 }
 
 SITE FIXLINKS {
 plugin org.drftpd.links.master
 class LinkManagerCommands
-method doSITE_FIXLINKS
+method doFIXLINKS
 perms =siteop
 help Fixes all links from LinkManager.
+help.specific Fixes all links from LinkManager.
 help.specific ${command}
 }
 
 SITE FIXSIZE {
 plugin org.drftpd.master.commands.dir
 class Dir
-method doSITE_FIXSIZE
+method doFIXSIZE
 perms =siteop
 help Recursively walks through and validates the size information of the current working directory.
+help.specific Recursively walks through and validates the size information of the current working directory.
 help.specific ${command}
 }
 
 SITE FIXSLAVECOUNT {
 plugin org.drftpd.master.commands.dir
 class Dir
-method doSITE_FIXSLAVECOUNT
+method doFIXSLAVECOUNT
 perms =siteop
 help Recursively walks through and validates the slave reference counts held against the current working directory.
+help.specific Recursively walks through and validates the slave reference counts held against the current working directory.
 help.specific ${command}
 help.specific This command should only be run when the site has a static VFS,
 help.specific this means no file uploads, no slaves remerging and no active
@@ -625,81 +661,90 @@ help.specific command is running the resulting counts set will be incorrect.
 SITE GADDUSER {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_GADDUSER
+method doGADDUSER
 perms =siteop
 help Add a new user to the specified group.
+help.specific Add a new user to the specified group.
 help.specific ${command} <group> <user> <password> [<ident@ip#1 ..]
 }
 
 SITE GALDN {
 plugin org.drftpd.master.commands.transferstatistics
 class MoreStats
-method doSITE_GALDN
+method doGALDN
 perms *
 help Lists the top downloading group of all time.
+help.specific Lists the top downloading group of all time.
 help.specific ${command}
 }
 
 SITE GALUP {
 plugin org.drftpd.master.commands.transferstatistics
 class MoreStats
-method doSITE_GALUP
+method doGALUP
 perms *
 help Lists the top uploading group of all time.
+help.specific Lists the top uploading group of all time.
 help.specific ${command}
 }
 
 SITE GDAYDN {
 plugin org.drftpd.master.commands.transferstatistics
 class MoreStats
-method doSITE_GDAYDN
+method doGDAYDN
 perms *
 help Lists the top downloading group for the day.
+help.specific Lists the top downloading group for the day.
 help.specific ${command}
 }
 
 SITE GDAYUP {
 plugin org.drftpd.master.commands.transferstatistics
 class MoreStats
-method doSITE_GDAYUP
+method doGDAYUP
 perms *
 help Lists the top uploading group for the day.
+help.specific Lists the top uploading group for the day.
 help.specific ${command}
 }
 
 SITE GINFO {
 plugin org.drftpd.master.commands.usermanagement
 class GroupManagementHandler
-method doSITE_GINFO
+method doGINFO
 perms =gadmin =siteop
 help Show information on a group.
+help.specific Show information on a group.
 help.specific ${command} <group>
 }
 
 SITE GIVE {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_GIVE
+method doGIVE
 perms =siteop
 help Give a user credits.
+help.specific Give a user credits.
 help.specific ${command} <user> <bytes>
 }
 
 SITE GMONTHDN {
 plugin org.drftpd.master.commands.transferstatistics
 class MoreStats
-method doSITE_GMONTHDN
+method doGMONTHDN
 perms *
 help Lists the top downloading group for the month.
+help.specific Lists the top downloading group for the month.
 help.specific ${command}
 }
 
 SITE GMONTHUP {
 plugin org.drftpd.master.commands.transferstatistics
 class MoreStats
-method doSITE_GMONTHUP
+method doGMONTHUP
 perms *
 help Lists the top uploading group of all time.
+help.specific Lists the top uploading group of all time.
 help.specific ${command}
 }
 
@@ -709,23 +754,27 @@ class TrialManagerCommands
 method doPASSED
 perms *
 help Lists if user has passed trial.
-help.specific ${command} <Group>
+help.specific Lists if user has passed trial.
+help.specific ${command}
 }
 
 SITE GROUPS {
 plugin org.drftpd.master.commands.usermanagement
 class GroupManagementHandler
-method doSITE_GROUPS
+method doGROUPS
 perms =siteop
-help Lists the groups on the site
+help Lists the groups on the site.
+help.specific Lists the groups on the site.
+help.specific ${command}
 }
 
 SITE GRPREN {
 plugin org.drftpd.master.commands.usermanagement
 class GroupManagementHandler
-method doSITE_GRPREN
+method doGRPREN
 perms =siteop
 help Rename a group.
+help.specific Rename a group.
 help.specific ${command} <oldgroup> <newgroup>
 }
 
@@ -735,33 +784,37 @@ class TrialManagerCommands
 method doTOP
 perms *
 help Lists all users in trial period.
-help.specific ${command} <num>
+help.specific Lists all users in trial period.
+help.specific ${command}
 }
 
 SITE GWKDN {
 plugin org.drftpd.master.commands.transferstatistics
 class MoreStats
-method doSITE_GWKDN
+method doGWKDN
 perms *
 help Lists the top downloading group for the week.
+help.specific Lists the top downloading group for the week.
 help.specific ${command}
 }
 
 SITE GWKUP {
 plugin org.drftpd.master.commands.transferstatistics
 class MoreStats
-method doSITE_GWKUP
+method doGWKUP
 perms *
 help Lists the top uploading group for the week.
+help.specific Lists the top uploading group for the week.
 help.specific ${command}
 }
 
 SITE HELP {
 plugin org.drftpd.master.commands.misc
 class Misc
-method doSITE_HELP
+method doHELP
 perms *
 help Duh! it does this dummy!
+help.specific Duh! it does this dummy!
 help.specific ${command} <site cmd> will display specific information on that command.
 nohelp ABOR,AUTH,CDUP,CLNT,CPSV,CWD,DELE,FEAT,IDNT,LIST,MDTM,MKD,MLSD,MLST,MODE,NOOP,PASS,PASV,PBSZ,PORT,PRET,PROT,PWD,QUIT,REST,RETR,RMD,RNFR,RNTO,SIZE,SSCN,STOR,SYST,TYPE,USER,XCRC
 }
@@ -772,6 +825,7 @@ class UserManagementHandler
 method doIdlers
 perms *
 help Show who's idling.
+help.specific Show who's idling.
 help.specific ${command}
 }
 
@@ -781,42 +835,47 @@ class IndexManager
 method doIndexStatus
 perms =siteop
 help Index status.
+help.specific Index status.
 help.specific ${command}
 }
 
 SITE KICK {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_KICK
+method doKICK
 perms =siteop
 help Kick a users current connections to the site.
+help.specific Kick a users current connections to the site.
 help.specific ${command} <user> [message]
 }
 
 SITE KICKALL {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_KICKALL
+method doKICKALL
 perms =siteop
 help Kick all users current connections to the site.
+help.specific Kick all users current connections to the site.
 help.specific ${command} [message]
 }
 
 SITE KICKSLAVE {
 plugin org.drftpd.master.commands.slavemanagement
 class SlaveManagement
-method doSITE_KICKSLAVE
+method doKICKSLAVE
 perms =siteop
 help Kick a slave offline.
-help.specific ${command} <SLAVENAME>
+help.specific Kick a slave offline.
+help.specific ${command} <slave>
 }
 
 SITE KILL {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_KILL
+method doKILL
 perms =siteop
 help Kill's a specific connection from the FTP by thread ID.
+help.specific Kill's a specific connection from the FTP by thread ID.
 help.specific ${command} <threadID> [message]
 }
 
@@ -826,24 +885,27 @@ class UserManagementHandler
 method doLeechers
 perms *
 help Show who's downloading.
+help.specific Show who's downloading.
 help.specific ${command}
 }
 
 SITE LINK {
 plugin org.drftpd.master.commands.dir
 class Dir
-method doSITE_LINK
+method doLINK
 perms =siteop
 help Creates a symbolic link.
+help.specific Creates a symbolic link.
 help.specific ${command} <target> <linkname>
 }
 
 SITE LIST {
 plugin org.drftpd.master.commands.sitemanagement
 class SiteManagementHandler
-method doSITE_LIST
+method doLIST
 perms *
 help This will raw list files in the current directory.
+help.specific This will raw list files in the current directory.
 help.specific ${command}
 }
 
@@ -853,24 +915,27 @@ class ServerStatus
 method doMasterUptime
 perms =siteop
 help Will show current master uptime.
+help.specific Will show current master uptime.
 help.specific ${command}
 }
 
 SITE MONTHDN {
 plugin org.drftpd.master.commands.transferstatistics
 class TransferStatistics
-method doSITE_MONTHDN
+method doMONTHDN
 perms *
 help Lists the top downloaders for the month.
+help.specific Lists the top downloaders for the month.
 help.specific ${command}
 }
 
 SITE MONTHUP {
 plugin org.drftpd.master.commands.transferstatistics
 class TransferStatistics
-method doSITE_MONTHUP
+method doMONTHUP
 perms *
 help Lists the top uploaders for the month.
+help.specific Lists the top uploaders for the month.
 help.specific ${command}
 }
 
@@ -880,6 +945,7 @@ class New
 method doNEW
 perms *
 help Will list newly uploaded directories.
+help.specific Will list newly uploaded directories.
 help.specific ${command} - List the newest dirs in all sections.
 help.specific ${command} <number> - List the <number> newest dirs in all sections.
 help.specific ${command} <section> - List the newest dirs in <section>.
@@ -897,28 +963,31 @@ filtered_sections REQUESTS
 SITE NUKE {
 plugin org.drftpd.master.commands.nuke
 class Nuke
-method doSITE_NUKE
+method doNUKE
 perms =nuke =siteop
 search false
 help Nuke a directory.
+help.specific Nuke a directory.
 help.specific ${command} <directory> <multiplier> <message>
 }
 
 SITE NUKES {
 plugin org.drftpd.master.commands.nuke
 class Nuke
-method doSITE_NUKES
+method doNUKES
 perms *
 help List all nuked directories.
+help.specific List all nuked directories.
 help.specific ${command} [section]
 }
 
 SITE NUKESCLEAN {
 plugin org.drftpd.master.commands.nuke
 class Nuke
-method doSITE_NUKESCLEAN
+method doNUKESCLEAN
 perms =nuke =siteop
 help Clear nukelog of all invalid nukes.
+help.specific Clear nukelog of all invalid nukes.
 help.specific ${command}
 }
 
@@ -928,42 +997,47 @@ class TrialManagerCommands
 method doPASSED
 perms *
 help Lists if user has passed trial.
-help.specific ${command} <User>
+help.specific Lists if user has passed trial.
+help.specific ${command} <user>
 }
 
 SITE PASSWD {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_PASSWD
+method doPASSWD
 perms *
 help Change your password.
+help.specific Change your password.
 help.specific ${command} <password>
 }
 
 SITE PRE {
 plugin org.drftpd.master.commands.pre
 class Pre
-method doSITE_PRE
+method doPRE
 perms *
 help Moves dir to specified section.
+help.specific Moves dir to specified section.
 help.specific ${command} <dir> <section>
 }
 
 SITE PURGE {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_PURGE
+method doPURGE
 perms =gadmin =siteop
 help Permanently remove a user from the site.
-help.specific ${command} <username>
+help.specific Permanently remove a user from the site.
+help.specific ${command} <user>
 }
 
 SITE READD {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_READD
+method doREADD
 perms =gadmin =siteop
 help Readd a deleted user.
+help.specific Readd a deleted user.
 help.specific ${command} <user>
 }
 
@@ -973,6 +1047,7 @@ class IndexManager
 method doRebuildIndex
 perms =siteop
 help Rebuild index.
+help.specific Rebuild index.
 help.specific ${command}
 }
 
@@ -982,6 +1057,7 @@ class IndexManager
 method doRefreshIndex
 perms =siteop
 help Requests a recursive refresh of data held for the current directory in the index.
+help.specific Requests a recursive refresh of data held for the current directory in the index.
 help.specific ${command} [-q]
 help.specific The -q option suppresses details of the progress of the refresh.
 }
@@ -989,28 +1065,31 @@ help.specific The -q option suppresses details of the progress of the refresh.
 SITE RELOAD {
 plugin org.drftpd.master.commands.sitemanagement
 class SiteManagementHandler
-method doSITE_RELOAD
+method doRELOAD
 perms =siteop
 help Reload the config files.
+help.specific Reload the config files.
 help.specific ${command}
 }
 
 SITE REMAPPROVE {
 plugin org.drftpd.master.commands.approve
 class ApproveCommands
-method doSITE_REMAPPROVE
+method doREMAPPROVE
 perms =siteop
 help Removes approval of release.
+help.specific Removes approval of release.
 help.specific ${command} [path]
 }
 
 SITE REMERGE {
 plugin org.drftpd.master.commands.slavemanagement
 class SlaveManagement
-method doSITE_REMERGE
+method doREMERGE
 perms =siteop
 help Rebuilds the file database of the specified slave.
-help.specific ${command} <SLAVENAME>
+help.specific Rebuilds the file database of the specified slave.
+help.specific ${command} <slave>
 }
 
 SITE REMERGEQUEUE {
@@ -1019,34 +1098,38 @@ class SlaveManagement
 method doRemergequeue
 perms =siteop
 help Displays remergequeue status.
+help.specific Displays remergequeue status.
 help.specific ${command}
 }
 
 SITE REMOVEEXPIRE {
 plugin org.drftpd.master.commands.usermanagement.expireduser
 class ExpiredUser
-method doSITE_REMOVEEXPIRE
+method doREMOVEEXPIRE
 perms =siteop
 help Removes expiry date for user.
-help.specific ${command} <username>
+help.specific Removes expiry date for user.
+help.specific ${command} <user>
 }
 
 SITE RENUSER {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_RENUSER
+method doRENUSER
 perms =siteop
 help Rename a user.
-help.specific ${command} <old_username> <new_username>
+help.specific Rename a user.
+help.specific ${command} <old_user> <new_user>
 }
 
 SITE REQDEL {
 plugin org.drftpd.request.master
 class Request
-method doSITE_REQDELETE
+method doREQDELETE
 perms =request =siteop
 help Deletes a request.
-help.specific ${command} <nameofrequest>
+help.specific Deletes a request.
+help.specific ${command} <request>
 # You can only delete your own without deleteOthers.
 request.deleteOthers =siteop
 }
@@ -1054,19 +1137,21 @@ request.deleteOthers =siteop
 SITE REQFILLED {
 plugin org.drftpd.request.master
 class Request
-method doSITE_REQFILLED
+method doREQFILLED
 perms *
 help Fill a request.
-help.specific ${command} <nameofrequest>
+help.specific Fill a request.
+help.specific ${command} <request>
 }
 
 SITE REQUEST {
 plugin org.drftpd.request.master
 class Request
-method doSITE_REQUEST
+method doREQUEST
 perms =request =siteop
 help Add a request.
-help.specific ${command} <nameofrequest>
+help.specific Add a request.
+help.specific ${command} <request>
 # You can only delete your own without deleteOthers.
 request.deleteOthers =siteop
 }
@@ -1074,9 +1159,10 @@ request.deleteOthers =siteop
 SITE REQUESTS {
 plugin org.drftpd.request.master
 class Request
-method doSITE_REQUESTS
+method doREQUESTS
 perms *
 help List unfilled requests.
+help.specific List unfilled requests.
 help.specific ${command}
 }
 
@@ -1086,6 +1172,7 @@ class Textoutput
 method doTEXT_OUTPUT
 perms *
 help Displays the site rules.
+help.specific Displays the site rules.
 help.specific ${command}
 file rules.txt
 }
@@ -1093,58 +1180,62 @@ file rules.txt
 SITE SECTIONS {
 plugin org.drftpd.master.commands.sections
 class Sections
-method doSITE_SECTIONS
+method doSECTIONS
 perms *
 help List the currently defined sections on the site.
+help.specific List the currently defined sections on the site.
 help.specific ${command}
 }
 
 SITE SEEN {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_SEEN
+method doSEEN
 perms *
 help Show when a user last connected.
+help.specific Show when a user last connected.
 help.specific ${command} <user>
 }
 
 SITE SETEXPIRE {
 plugin org.drftpd.master.commands.usermanagement.expireduser
 class ExpiredUser
-method doSITE_SETEXPIRE
+method doSETEXPIRE
 perms =siteop
-help Sets expiry date for user <yyyy-MM-dd>.
-help.specific ${command} <username> <expiry-date>
+help Sets expiry date for user.
+help.specific Sets expiry date for user.
+help.specific ${command} <user> <yyyy-mm-dd>
 }
 
 SITE SHUTDOWN {
 plugin org.drftpd.master.commands.sitemanagement
 class SiteManagementHandler
-method doSITE_SHUTDOWN
+method doSHUTDOWN
 perms =siteop
 help Shutdown the ftp server.
+help.specific Shutdown the ftp server.
 help.specific ${command}
 }
 
 SITE SLAVE {
 plugin org.drftpd.master.commands.slavemanagement
 class SlaveManagement
-method doSITE_SLAVE
+method doSLAVE
 perms =siteop
 help Show or modify information about a specific slave.
-help.specific ${command} <SLAVENAME>
+help.specific ${command} <slave>
 help.specific Show the stored information set on the specified slave.
-help.specific ${command} <SLAVENAME> SET <key> <value>
+help.specific ${command} <slave> set <key> <value>
 help.specific Add any information you want to the slave.
-help.specific ${command} <SLAVENAME> UNSET <key>
+help.specific ${command} <slave> unset <key>
 help.specific Remove any information you want from the slave.
-help.specific ${command} <SLAVENAME> ADDMASK <ident@host>
+help.specific ${command} <slave> addmask <ident@host>
 help.specific Add a host mask that the specified slave is allowed to connect from.
-help.specific ${command} <SLAVENAME> DELMASK <ident@host>
+help.specific ${command} <slave> delmask <ident@host>
 help.specific Remove a host mask that the specified slave is allowed to connect from.
-help.specific ${command} <SLAVENAME> SHUTDOWN
+help.specific ${command} <slave> shutdown
 help.specific Notify the specified slave to initiate a shutdown (and potentially restart).
-help.specific ${command} <SLAVENAME> QUEUES
+help.specific ${command} <slave> queues
 help.specific Show status of rename & remerge queues.
 }
 
@@ -1154,27 +1245,30 @@ class ServerStatus
 method doSlaveUptime
 perms =siteop
 help Will show current slave uptime.
+help.specific Will show current slave uptime.
 help.specific ${command} <slave>
 }
 
 SITE SLAVES {
 plugin org.drftpd.master.commands.slavemanagement
 class SlaveManagement
-method doSITE_SLAVES
+method doSLAVES
 perms =siteop
 help List the slave added to the site and the status of each.
+help.specific List the slave added to the site and the status of each.
 help.specific ${command}
 }
 
 SITE SLAVESELECT {
 plugin org.drftpd.master.commands.slavemanagement
 class SlaveManagement
-method doSITE_SLAVESELECT
+method doSLAVESELECT
 perms =siteop
 help Gives the value of each slave for your current SlaveSelection config.
-help.specific ${command} <TYPE> </FULLPATH>
-help.specific <TYPE> is one of up,down,jobdown,jobup.
-help.specific </FULLPATH> needs to start with "/" should not exist.
+help.specific Gives the value of each slave for your current SlaveSelection config.
+help.specific ${command} <type> </fullpath>
+help.specific <type> is one of up, down, jobdown, jobup.
+help.specific </fullpath> needs to start with "/" should not exist.
 }
 
 SITE SLAVESUPTIME {
@@ -1183,6 +1277,7 @@ class ServerStatus
 method doSlavesUptime
 perms =siteop
 help Will show current slaves uptime.
+help.specific Will show current slaves uptime.
 help.specific ${command}
 }
 
@@ -1192,24 +1287,27 @@ class UserManagementHandler
 method doSpeed
 perms *
 help Show the state of the specified users connections.
+help.specific Show the state of the specified users connections.
 help.specific ${command}
 }
 
 SITE STAT {
 plugin org.drftpd.master.commands.misc
 class Misc
-method doSITE_STAT
+method doSTAT
 perms *
 help Show simple user stats.
+help.specific Show simple user stats.
 help.specific ${command}
 }
 
 SITE STATS {
 plugin org.drftpd.master.commands.transferstatistics
 class TransferStatistics
-method doSITE_STATS
+method doSTATS
 perms *
 help Show user stats.
+help.specific Show user stats.
 help.specific ${command}
 }
 
@@ -1219,6 +1317,7 @@ class ServerStatus
 method doStatus
 perms =siteop
 help Will show current information about the server.
+help.specific Will show current information about the server.
 help.specific ${command} Usage:
 help.specific ${command} <os, vm, memory, threads, gc, all>
 help.specific ${command} OS - Will show Operational System Info
@@ -1233,45 +1332,50 @@ help.specific ${command} ALL - shortcut to display ALL Info.
 SITE SWAP {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_SWAP
+method doSWAP
 perms =siteop
 help Swap credits between users.
-help.specific ${command} <srcuser> <destuser> <bytes>
+help.specific Swap credits between users.
+help.specific ${command} <src_user> <dest_user> <bytes>
 }
 
 SITE SWHO {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_SWHO
+method doSWHO
 perms =siteop
 help Show who's online.
+help.specific Show who's online.
 help.specific ${command}
 }
 
 SITE TAGLINE {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_TAGLINE
+method doTAGLINE
 perms *
 help Change your tagline.
+help.specific Change your tagline.
 help.specific ${command} <tagline>
 }
 
 SITE TAKE {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_TAKE
+method doTAKE
 perms =siteop
 help Remove credits from a user.
+help.specific Remove credits from a user.
 help.specific ${command} <user> <bytes>
 }
 
 SITE TIME {
 plugin org.drftpd.master.commands.misc
 class Misc
-method doSITE_TIME
+method doTIME
 perms *
 help Show current server time.
+help.specific Show current server time.
 help.specific ${command}
 }
 
@@ -1281,43 +1385,48 @@ class TrialManagerCommands
 method doTOP
 perms *
 help Lists all users in trial period.
-help.specific ${command} <num>
+help.specific Lists all users in trial period.
+help.specific ${command}
 }
 
 SITE TRAFFIC {
 plugin org.drftpd.master.commands.transferstatistics
 class MoreStats
-method doSITE_TRAFFIC
+method doTRAFFIC
 perms *
 help Summary of the daemon upload/download stats.
+help.specific Summary of the daemon upload/download stats.
 help.specific ${command}
 }
 
 SITE UNBAN {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_UNBAN
+method doUNBAN
 perms =ban =siteop
 help Removes a ban for the specified user.
+help.specific Removes a ban for the specified user.
 help.specific ${command} <user>
 }
 
 SITE UNBANALL {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_UNBANALL
+method doUNBANALL
 perms =ban =siteop
 help Removes ban from all users.
+help.specific Removes ban from all users.
 help.specific ${command}
 }
 
 SITE UNNUKE {
 plugin org.drftpd.master.commands.nuke
 class Nuke
-method doSITE_UNNUKE
+method doUNNUKE
 perms =nuke =siteop
 search false
 help Unnuke a directory.
+help.specific Unnuke a directory.
 help.specific ${command} <directory>
 }
 
@@ -1327,35 +1436,38 @@ class UserManagementHandler
 method doUploaders
 perms *
 help Show who's uploading.
+help.specific Show who's uploading.
 help.specific ${command}
 }
 
 SITE USER {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_USER
+method doUSER
 perms *
 help Show details for a user.
+help.specific Show details for a user.
 help.specific ${command} <user>
 }
 
 SITE USERS {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_USERS
+method doUSERS
 perms =siteop
-help List all usernames added to the site.
+help List all users added to the site.
+help.specific List all users added to the site.
 help.specific ${command}
 }
 
-SITE VERSION {
+SITE VERS {
 plugin org.drftpd.master.commands.misc
 class Misc
-method doSITE_VERS
+method doVERS
 perms *
 help Show DrFTPD version.
-help.specific ${command}
 help.specific Show DrFTPD version.
+help.specific ${command}
 }
 
 SITE WELCOME {
@@ -1364,6 +1476,7 @@ class Textoutput
 method doTEXT_OUTPUT
 perms *
 help Displays site welcome message.
+help.specific Displays site welcome message.
 help.specific ${command}
 file welcome.txt
 }
@@ -1371,45 +1484,51 @@ file welcome.txt
 SITE WHO {
 plugin org.drftpd.master.commands.usermanagement
 class UserManagementHandler
-method doSITE_WHO
+method doWHO
 perms =siteop
 help Show who's online.
+help.specific Show who's online.
 help.specific ${command}
 }
 
 SITE WIPE {
 plugin org.drftpd.master.commands.dir
 class Dir
-method doSITE_WIPE
+method doWIPE
 perms =wipe =siteop
-help Deletes files without removing credits. -r means delete recursively.
+help Deletes files without removing credits.
+help.specific Deletes files without removing credits.
 help.specific ${command} [-r] <file/dir>
+help.specific [-r] means delete recursively.
 }
 
 SITE WKDN {
 plugin org.drftpd.master.commands.transferstatistics
 class TransferStatistics
-method doSITE_WKDN
+method doWKDN
 perms *
 help Lists the top downloaders for the week.
+help.specific Lists the top downloaders for the week.
 help.specific ${command}
 }
 
 SITE WKUP {
 plugin org.drftpd.master.commands.transferstatistics
 class TransferStatistics
-method doSITE_WKUP
+method doWKUP
 perms *
 help Lists the top uploaders for the week.
+help.specific Lists the top uploaders for the week.
 help.specific ${command}
 }
 
 SITE XDUPE {
 plugin org.drftpd.master.commands.xdupe
 class XDupe
-method doSITE_XDUPE
+method doXDUPE
 perms *
 help The X-DUPE mechanism helps you saving time when uploading files by avoiding "dupes".
+help.specific The X-DUPE mechanism helps you saving time when uploading files by avoiding "dupes".
 help.specific ${command} <mode>
 help.specific Mode 1: Up to a maximum of 80 chars total line length. Filenames longer than 66 chars will be truncated.
 help.specific Mode 2: The server sends only one filename per X-DUPE line, and the maximum line length is 80 chars. Filenames are also truncated.

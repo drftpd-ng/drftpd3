@@ -1,8 +1,11 @@
-SITE UNMIRROR {
+unmirror {
 plugin org.drftpd.mirror.master
 class Mirror
-method doSITE_UNMIRROR
+method doUNMIRROR
 perms =siteop
 help Unmirror path so files are kept on one slave only.
+help.specific Unmirror path so files are kept on one slave only. 
 help.specific ${command} <path>
+input all
+output source
 }

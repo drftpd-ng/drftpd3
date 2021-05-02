@@ -1,0 +1,26 @@
+refreshspeedtest {
+plugin org.drftpd.speedtestnet.master
+class SpeedTest
+method doREFRESHSPEEDTEST
+perms =siteop
+help Force an update of speedtest.net server list.
+help.specific Force an update of speedtest.net server list.
+help.specific ${command}
+input all
+output source
+}
+
+speedtest {
+plugin org.drftpd.speedtestnet.master
+class SpeedTest
+method doSPEEDTEST
+perms =siteop
+help Run a speedtest on slave against speedtest.net test servers, * for all slaves.
+help.specific Run a speedtest on slave against speedtest.net test servers, * for all slaves.
+help.specific ${command} [<slave> [-list | -update | <test server id>]]
+help.specific -list option in conjunction with slave name lists closests servers to slave location based on its IP.
+help.specific -update option in conjunction with slave name to force location update.
+help.specific An optional test server id can be specified to force test server.
+input all
+output source
+}

@@ -1,9 +1,10 @@
 createtv {
 plugin org.drftpd.tvmaze.master
 class TvMaze
-method doSITE_CREATETV
+method doCREATETV
 perms =siteop
-help Create TvMaze metadata for all shows below current dir.
+help Create TVmaze metadata for all shows below current dir.
+help.specific Create TVmaze metadata for all shows below current dir.
 help.specific ${command} [path]
 input all
 output source
@@ -12,9 +13,10 @@ output source
 removetv {
 plugin org.drftpd.tvmaze.master
 class TvMaze
-method doSITE_REMOVETV
+method doREMOVETV
 perms =siteop
-help Remove TvMaze metadata for all shows below current dir.
+help Remove TVmaze metadata for all shows below current dir.
+help.specific Remove TVmaze metadata for all shows below current dir.
 help.specific ${command} [path]
 input all
 output source
@@ -23,9 +25,10 @@ output source
 tv {
 plugin org.drftpd.tvmaze.master
 class TvMaze
-method doSITE_TV
+method doTV
 perms *
-help Search for a tv show (-v for verbose output).
+help Search for a tv show.
+help.specific Search for a tv show.
 help.specific ${command} [-v] <nameofshow> [episodenumber]
 input all
 output source
@@ -34,9 +37,10 @@ output source
 tvqueue {
 plugin org.drftpd.tvmaze.master
 class TvMaze
-method doSITE_TVQUEUE
+method doTVQUEUE
 perms =siteop
 help Show number of items in the queue to be processed.
+help.specific Show number of items in the queue to be processed.
 help.specific ${command}
 input all
 output source

@@ -1,0 +1,49 @@
+# This file controls commands accessible via ftp connections
+# All commands generally have the following properties, some
+# commands may have additional configuration values also:
+# plugin - The plugin that provides this command
+# class - The java class containing this command
+# method - The java method called when executing this command
+# perms - The users allowed to use this command
+# help - A simple description of the commands function
+# help.specific - More detailed information about the commands usage
+
+SITE CREATETV {
+plugin org.drftpd.tvmaze.master
+class TvMaze
+method doCREATETV
+perms =siteop
+help Create TVmaze metadata for all shows below current dir.
+help.specific Create TVmaze metadata for all shows below current dir.
+help.specific ${command}
+}
+
+SITE REMOVETV {
+plugin org.drftpd.tvmaze.master
+class TvMaze
+method doREMOVETV
+perms =siteop
+help Remove TvMaze metadata for all shows below current dir.
+help.specific Remove TvMaze metadata for all shows below current dir.
+help.specific ${command}
+}
+
+SITE TV {
+plugin org.drftpd.tvmaze.master
+class TvMaze
+method doTV
+perms *
+help Search for a tv show.
+help.specific Search for a tv show.
+help.specific ${command} [-v] <nameofshow> [episodenumber]
+}
+
+SITE TVQUEUE {
+plugin org.drftpd.tvmaze.master
+class TvMaze
+method doTVQUEUE
+perms =siteop
+help Show number of items in the queue to be processed.
+help.specific Show number of items in the queue to be processed.
+help.specific ${command}
+}

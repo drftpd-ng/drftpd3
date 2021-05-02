@@ -1,52 +1,49 @@
-SITE BLOWFISH {
+blowfish {
 plugin org.drftpd.master.sitebot
 class commands.SiteBotManagement
-method doSITE_BLOWFISH
+method doBLOWFISH
 perms *
 help List blowfish keys for irc channels.
+help.specific List blowfish keys for irc channels.
 help.specific ${command}
 help.specific ${command} <botname>
 help.specific <botname> is required to use a secondary sitebot.
+input private
+output source
 }
 
-SITE GETKEY {
-plugin org.drftpd.master.sitebot
-class commands.SiteBotManagement
-method doSITE_BLOWFISH
-perms *
-help List blowfish keys for irc channels.
-help.specific ${command}
-help.specific ${command} <botname>
-help.specific <botname> is required to use a secondary sitebot.
-}
-
-SITE IDENT {
+ident {
 plugin org.drftpd.master.sitebot
 class commands.UserHandler
 method doIdent
 perms %
 help Associates an irc nick with a ftp user.
+help.specific Associates an irc nick with a ftp user.
 help.specific ${command} <username> <password>
+input private
+output source
 }
 
-SITE INVITE {
+invite {
 plugin org.drftpd.master.sitebot
 class commands.UserHandler
-method doSITE_INVITE
+method doInvite
 perms *
-help Invite yourself to irc channels using the sitebot.
-help.specific ${command} <ircnick>
-help.specific ${command} <botname> <ircnick>
-help.specific <botname> is required to use a secondary sitebot.
+help Invite yourself into irc channels using the sitebot.
+help.specific Invite yourself into irc channels using the sitebot.
+help.specific ${command} <username> <password>
+input private
+output source
 }
 
-SITE IRC {
+irc {
 plugin org.drftpd.master.sitebot
 class commands.SiteBotManagement
-method doSITE_IRC
+method doIRC
 perms =siteop
 help Control the IRC sitebot.
 help.specific ${command} connect
+help.specific Control the IRC sitebot.
 help.specific ${command} <botname> connect
 help.specific ${command} disconnect
 help.specific ${command} <botname> disconnect
@@ -57,35 +54,32 @@ help.specific ${command} <botname> raw <command>
 help.specific ${command} say <message>
 help.specific ${command} <botname> say <message>
 help.specific <botname> is mandatory if more than one sitebot running.
+input private
+output source
 }
 
-SITE SETBLOWFISH {
+setblowfish {
 plugin org.drftpd.master.sitebot
 class commands.SiteBotManagement
-method doSITE_SETBLOWFISH
+method doSETBLOWFISH
 perms *
 help Set your personal blowfish key on the sitebot.
+help.specific Set your personal blowfish key on the sitebot.
 help.specific ${command} <blowkey>
 help.specific ${command} <botname> <blowkey>
 help.specific <botname> is required to use a secondary sitebot.
+input private
+output source
 }
 
-SITE SETKEY {
-plugin org.drftpd.master.sitebot
-class commands.SiteBotManagement
-method doSITE_SETBLOWFISH
-perms *
-help Set your personal blowfish key on the sitebot.
-help.specific ${command} <blowkey>
-help.specific ${command} <botname> <blowkey>
-help.specific <botname> is required to use a secondary sitebot.
-}
-
-SITE UNIDENT {
+unident {
 plugin org.drftpd.master.sitebot
 class commands.UserHandler
 method doUNIdent
 perms *
 help Unassociates an irc nick with a ftp user.
+help.specific Unassociates an irc nick with a ftp user.
 help.specific ${command} <username> <password>
+input private
+output source
 }

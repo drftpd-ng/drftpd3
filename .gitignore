@@ -9,9 +9,11 @@ target
 build
 drftpd.key
 /config/
+/dependencies/
+/lib/
+/core/
 
 site
-runtime
 userdata
 index.bkp
 
@@ -42,6 +44,6 @@ index.bkp
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-/dependencies/
-/lib/
-/core/master/userdata/vfs/.dirProperties
+# DrFTPD Runtime
+/runtime/master/
+/runtime/slave/
